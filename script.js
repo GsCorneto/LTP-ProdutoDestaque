@@ -22,4 +22,5 @@ class ProdutoDestaque extends Produtos{
         return "Nome: " + this.nome + " ,Data de Cadastro: " + this.dataCadastro + " ,Descrição: " + this.descricao + " ,Preço: R$" + this.preco
     }
 }
- const prodDes = new ProdutoDestaque("Leon", "21/07/1977", "HEEEEELLLPP!", 20)
+ const prodDes = new ProdutoDestaque("Leon S. Kennedy", "21/07/1977", "HEEEEELLLPP!", 20)
+ console.log(prodDes)
