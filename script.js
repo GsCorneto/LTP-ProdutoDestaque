@@ -13,4 +13,6 @@ const prod = new Produtos("Wesker", "25/04/2023", "Muita Nostalgia", 250)
 console.log(prod.mostrar_produto())
 
 
-class ProdutoDestaque
+class ProdutoDestaque extends Produtos{
+    constructor(nome, dataCadastro)
+}
