@@ -14,5 +14,9 @@ console.log(prod.mostrar_produto())
 
 
 class ProdutoDestaque extends Produtos{
-    constructor(nome, dataCadastro)
+    constructor(nome, dataCadastro, descricao, preco, img ){
+        super(nome, dataCadastro, descricao, preco)
+        this.img = img
+    }
+    mostrar
 }
