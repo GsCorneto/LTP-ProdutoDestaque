@@ -18,5 +18,8 @@ class ProdutoDestaque extends Produtos{
         super(nome, dataCadastro, descricao, preco)
         this.img = img
     }
-    mostrar
+    mostrar_produto_destaque(){
+        return "Nome: " + this.nome + " ,Data de Cadastro: " + this.dataCadastro + " ,Descrição: " + this.descricao + " ,Preço: R$" + this.preco
+    }
 }
+ const prodDes = new ProdutoDestaque("Leon", "21/07/1977", "Muita Nostalgia", 250)
