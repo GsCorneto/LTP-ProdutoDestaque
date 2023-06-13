@@ -37,6 +37,7 @@ body{
     width: 250px;
     background-color: #ffff;
     border: 1px solid #000000;
+    border-radius: 5px;
   }
 
   .card{
@@ -48,6 +49,7 @@ body{
     width: 160px;
     background-color: #ffff;
     border: 1px solid #000000;
+    border-radius: 5px;
   }
 
   .card h2{
@@ -69,6 +71,7 @@ body{
     border-color: #222020;
     background-color: #ca1508;
     font-weight:bold;
+    border-radius: 10px;
   }
   
   footer{
