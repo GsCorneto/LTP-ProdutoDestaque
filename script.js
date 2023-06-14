@@ -1,7 +1,7 @@
 class Aviso extends Error{
     constructor(message){
       super(message);
-      this.name = "Falta de Atributos"
+      this.name = "Alerta"
     }
   }
 
@@ -14,21 +14,27 @@ class Produtos{
     }
 
     mostrar_produto(){
-         try{ `
-         <div>
-         <h2>${this.nome}</h2>
-         <p>${this.descricao}</p>
-         <p>${this.dataCadastro}
-         <p>${this.preco}<button class= "compra">Contratar</button></p>
-        </div>
-         `}
+         try{ return this.atributos();}
         catch (erro){
             console.log(erro)
         }
     }
+
+    atributos() {
+        if (this.nome != "" && this.descricao != "" && this.dataCadastro != "" && + this.preco != ""){
+          return  `
+          <h2>${this.nome}</h2>
+          <div>${this.descricao}</div>
+          <p>${this.dataCadastro}</p>
+          <p>${this.preco}<button class= "compra">Contratar</button></p>
+                `}
+                else{
+          throw new Aviso("Insira os atributos que faltam!")
+      }
+      }
 }
 
-const prod = new Produtos("Wesker", "25/04/2023", "Muita Nostalgia", "ptas "+ 34.546 )
+const prod = new Produtos("", "25/04/2023", "Muita Nostalgia", "ptas "+ 34.546 )
 const prod2 = new Produtos("John Wick", "27/11/2014", "Adora Cachorros", "CO$ "+ 10.999)
 const prod3 = new Produtos("Deadpool", "12/02/1991", "Mercenário Tagarela", "USD "+ 25.987)
 console.log(prod.mostrar_produto())
@@ -40,20 +46,31 @@ class ProdutoDestaque extends Produtos{
         this.img = img;
     }
     mostrar_produto_destaque(){
-          try{  `
-            <h2>${this.nome}</h2>
-            <div>${this.dataCadastro}</div>
-            <p>${this.descricao}</p>
-            <img src= ${this.img} class="imagem"></img>
-            <p>${this.preco}<button class= "compra">Contratar</button></p>
-            <h2>Trabalhador Certificado</h2>
-                  `}
+          try{ return this.atributos();}
        
         catch (erro){
             console.log(erro)
         }
     }
+
+      atributos() {
+        if (this.nome != "" && this.dataCadastro != "" && this.descricao != "" && + this.img != "" && + this.preco != ""){
+          return `
+          <h2>${this.nome}</h2>
+          <div>${this.dataCadastro}</div>
+          <p>${this.descricao}</p>
+          <img src= ${this.img} class="imagem"></img>
+          <p>${this.preco}<button class= "compra">Contratar</button></p>
+          <h2>Trabalhador Certificado</h2>
+                `}
+            else{
+          throw new Aviso("Insira os atributos que faltam!")
+      }
+      }
 }
+
+
+
 
  const prodDes = new ProdutoDestaque("Leon S. Kennedy", "21/07/1977", "Enviado pelo presidente", "ptas "+ 9.654, "https://static.wikia.nocookie.net/residentevil/images/1/12/Image4kq8.jpg/revision/latest?cb=20120414235220&path-prefix=pt-br")
  console.log(prodDes)
